@@ -2,6 +2,12 @@
   "name": "monorepo-typescript",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -12,11 +18,12 @@
     "@commitlint/config-conventional": "^17.0.3",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "turbo": "^1.3.4",
     "typescript": "^4.7.4"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix"
+      "turbo run lint"
     ]
   }
 }
