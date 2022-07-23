@@ -1,0 +1,15 @@
+{
+  "extends": "@app/shared/tsconfig-base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client"],
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@web/*": ["src/*"]
+    }
+  }
+}

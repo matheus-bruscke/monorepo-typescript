@@ -12,7 +12,8 @@
       "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
     },
     "lint": {
-      "outputs": []
+      "outputs": [],
+      "inputs": ["apps/*/src/**/*.tsx", "pacakges/*/src/**/*.ts"]
     },
     "deploy": {
       "dependsOn": ["build", "test", "lint"],
