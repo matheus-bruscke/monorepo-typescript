@@ -13,7 +13,7 @@
     },
     "lint": {
       "outputs": [],
-      "inputs": ["apps/*/src/**/*.tsx", "pacakges/*/src/**/*.ts"]
+      "inputs": ["apps/*/src/**/*.tsx", "packages/*/src/**/*.ts"]
     },
     "deploy": {
       "dependsOn": ["build", "test", "lint"],

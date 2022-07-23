@@ -1,13 +1,44 @@
 /** types */
-import type { Component } from 'solid-js'
+import { TodosModel } from '@app/contexts'
+import { Component, For } from 'solid-js'
 
 /** render */
 const App: Component = () => {
+  const todo = new TodosModel([
+    { id: '1', title: 'learn js', completed: false },
+  ])
+
   return (
-    <h1>
-      hello there ada dwaa ad aad a dawd adadad adad ad ad ad ad ad ada
-      dadaw2adaa ada qadada dad axca ad adad w ada dadwa
-    </h1>
+    <div>
+      <For each={todo.data} fallback={<div>Loading...</div>}>
+        {({ id, title, completed }) => (
+          <div style={{ display: 'flex', 'align-items': 'center', gap: '5px' }}>
+            <input
+              type="checkbox"
+              checked={completed}
+              onChange={() => todo.toggle(String(id))}
+            />
+            <p>
+              {id}-{title} "|" {completed ? 'completed' : 'not completed'}
+            </p>
+
+            <button onClick={() => todo.remove(String(id))}>remove</button>
+          </div>
+        )}
+      </For>
+
+      <button
+        onClick={() =>
+          todo.add({
+            id: String(todo.data.length + 1),
+            title: `new todo ${todo.data.length + 1}`,
+            completed: false,
+          })
+        }
+      >
+        Add
+      </button>
+    </div>
   )
 }
 

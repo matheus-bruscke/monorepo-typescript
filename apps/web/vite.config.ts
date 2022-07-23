@@ -11,7 +11,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@web': '/src/',
+      '@web': 'src/',
+      '@contexts': '../../packages/contexts/src/',
     },
   },
 })

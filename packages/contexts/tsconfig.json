@@ -1,0 +1,10 @@
+{
+  "extends": "@app/shared/tsconfig-base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "@contexts/*": ["src/*"]
+    }
+  }
+}
