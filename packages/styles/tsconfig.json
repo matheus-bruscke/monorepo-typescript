@@ -1,7 +1,6 @@
 {
-  "extends": "@app/shared/tsconfig-base.json",
+  "extends": "@app/shared/tsconfig-library.json",
   "compilerOptions": {
-    "target": "ESNext",
     "baseUrl": ".",
     "paths": {
       "@styles/*": ["src/*"]

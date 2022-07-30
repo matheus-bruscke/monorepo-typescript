@@ -1,9 +1,13 @@
 {
   "name": "@app/styles",
   "version": "1.0.0",
-  "main": "src/index.ts",
-  "license": "MIT",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "dependencies": {
-    "@stitches/core": "^1.2.8"
+    "@stitches/core": "^1.2.8",
+    "configs": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
   }
 }

@@ -1,8 +1,8 @@
 /** packages */
-import { ComponentProps as StitchesComponents } from '@stitches/core'
+import { ComponentProps as StitchesComponents } from "@stitches/core"
 
 /** types */
 type ComponentProps<T> = StitchesComponents<T>
 
 /** exports */
-export { ComponentProps }
+export type { ComponentProps }

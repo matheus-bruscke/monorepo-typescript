@@ -1,26 +1,21 @@
 /** types */
 import { TodosModel } from '@app/contexts'
+import { Box, Text } from '@app/components'
 import { Component, For } from 'solid-js'
 
 /** render */
 const App: Component = () => {
-  const todo = new TodosModel([
-    { id: '1', title: 'learn js', completed: false },
-  ])
+  const todo = new TodosModel([{ id: '1', title: 'learn js', completed: true }])
 
   return (
     <div>
       <For each={todo.data} fallback={<div>Loading...</div>}>
         {({ id, title, completed }) => (
           <div style={{ display: 'flex', 'align-items': 'center', gap: '5px' }}>
-            <input
-              type="checkbox"
-              checked={completed}
-              onChange={() => todo.toggle(String(id))}
-            />
-            <p>
+            <input type="checkbox" checked={completed} onChange={() => todo.toggle(String(id))} />
+            <Text>
               {id}-{title} "|" {completed ? 'completed' : 'not completed'}
-            </p>
+            </Text>
 
             <button onClick={() => todo.remove(String(id))}>remove</button>
           </div>
@@ -36,8 +31,12 @@ const App: Component = () => {
           })
         }
       >
-        Add
+        <Text>add</Text>
       </button>
+
+      <Text>hello there</Text>
+
+      {/* <Box /> */}
     </div>
   )
 }

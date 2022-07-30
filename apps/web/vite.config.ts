@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
+import path from 'path'
 
 export default defineConfig({
   plugins: [solidPlugin()],
@@ -11,8 +12,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@web': 'src/',
-      '@contexts': '../../packages/contexts/src/',
+      '@web': path.resolve(__dirname, './src/'),
+      '@contexts': path.resolve(__dirname, '../../src/contexts/src/'),
+      '@components': path.resolve(__dirname, '../../packages/components/src/'),
     },
   },
 })

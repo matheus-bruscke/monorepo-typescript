@@ -2,6 +2,7 @@
 import { render } from 'solid-js/web'
 import { enableExternalSource } from 'solid-js'
 import { storeReaction } from '@app/contexts'
+import { ThemeProvider } from '@app/components'
 
 /** compose */
 import App from './App'
@@ -23,4 +24,11 @@ enableExternalSource((fn, trigger) => {
 })
 
 /** render */
-render(() => <App />, document.getElementById('root') as HTMLElement)
+render(
+  () => (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  ),
+  document.getElementById('root') as HTMLElement,
+)
